@@ -1,0 +1,25 @@
+/* base */
+@import "base/var";
+@import "base/reset";
+@import "base/fonts";
+
+/* mixin */
+@import "base/mixin";
+
+/*libs*/
+@import "libs/fullpage";
+
+/* main */
+@import "partials/main";
+
+@import "blocks/btn";
+@import "blocks/characteristics";
+@import "blocks/hero";
+@import "blocks/choice";
+@import "blocks/result";
+
+/* components */
+@import "partials/header";
+@import "partials/footer";
+
+/*blocks*/

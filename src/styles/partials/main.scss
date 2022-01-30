@@ -1,0 +1,20 @@
+html {
+  font-size: $fs-main;
+}
+
+body {
+  font-family: $mainFont;
+  color: $textMainColor;
+}
+
+.container {
+  width: 100%;
+  max-width: vw(1170);
+  margin: 0 auto;
+  padding: 0 vw(15);
+
+  @include min(1920) {
+    max-width: 1170px;
+    padding: 0 15px;
+  }
+}

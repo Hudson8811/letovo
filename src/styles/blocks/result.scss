@@ -1,0 +1,48 @@
+.result {
+  height: 100vh;
+  padding: vw(52) 0;
+
+  @include min(1920) {
+    padding: 52px 0;
+  }
+
+  background-color: $yellow-fd;
+
+  &.hide {
+    display: none;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__main {
+    width: 50%;
+    margin-right: 80px;
+  }
+
+  &__form {
+    width: calc(50% - 80px);
+  }
+
+  &__short {
+    max-width: vw(511);
+    margin: 0 0 vw(37);
+    font-size: vw(31);
+    line-height: 1.2;
+    color: $blue-0a;
+    font-weight: 600;
+
+    @include min(1920) {
+      max-width: 511px;
+      margin: 0 0 37px;
+      font-size: 31px;
+    }
+
+    @include max(sm) {
+      max-width: vw(400, 800);
+      margin-bottom: vw(40, 800);
+      font-size: vw(24, 800);
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  padding: vw(52) 0;
+
+  background-color: $yellow-fd;
+  background-repeat: no-repeat;
+  background-position: left 50% bottom 0;
+  background-size: vw(1138) auto, auto 100%;
+  background-image: url("../images/kinds.svg"), url("../images/hero-bg.jpg");
+
+  @include min(1920) {
+    padding: 52px 0;
+    background-size: 1138px auto, cover;
+  }
+
+  @include max(sm) {
+    padding: vw(128, 800) 0;
+
+    background-size: 97.375% auto, cover;
+    background-image: url("../images/kinds.svg"),
+      url("../images/hero-bg-mobile.jpg");
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 200% auto;
+    background-image: url("../images/section-bg.png");
+    pointer-events: none;
+  }
+
+  &::before {
+    left: 0;
+    background-position: 0 0;
+  }
+
+  &::after {
+    right: 0;
+    background-position: right 0 top 0;
+  }
+
+  &__container {
+  }
+
+  &__title {
+    max-width: vw(470);
+    margin: 0 auto vw(28);
+    font-size: vw(88);
+    line-height: 1.1;
+    color: $blue-0a;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include min(1920) {
+      max-width: 470px;
+      margin: 0 auto 28px;
+      font-size: 88px;
+    }
+
+    @include max(sm) {
+      max-width: vw(274, 800);
+      margin-bottom: vw(36, 800);
+      font-size: vw(51, 800);
+    }
+  }
+
+  &__text {
+    max-width: vw(511);
+    margin: 0 auto vw(37);
+    font-size: vw(31);
+    line-height: 1.2;
+    color: $blue-0a;
+    text-align: center;
+    font-weight: 600;
+
+    @include min(1920) {
+      max-width: 511px;
+      margin: 0 auto 37px;
+      font-size: 31px;
+    }
+
+    @include max(sm) {
+      max-width: vw(400, 800);
+      margin-bottom: vw(40, 800);
+      font-size: vw(24, 800);
+    }
+  }
+
+  &__btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: vw(260);
+
+    @include min(1920) {
+      min-width: 260px;
+    }
+
+    @include max(sm) {
+      min-width: vw(260, 800);
+    }
+  }
+}

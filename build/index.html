@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/main.min.css" rel="stylesheet">
+    <title>Главная</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">  <img src="images/logo.svg" width="271" height="103" alt="Логотип школы Летово"></div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="fp" id="fullpage">
+        <section class="hero section">
+          <div class="hero__container container">
+            <h1 class="hero__title">Светлое будущее</h1>
+            <div class="hero__text">Узнайте, как помочь развитию своего ребенка</div><a class="hero__btn btn" href="#">Узнать</a>
+          </div>
+        </section>
+        <section class="choice section">
+          <div class="choice__container container">
+            <div class="choice__text">Выберите 3 ключевых качества своего ребенка:</div>
+            <div class="choice__list characteristics">
+              <button class="characteristics__item characteristics__item--" type="button" data-id="a">Любознательный</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="b">Знающий</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="c">Неравнодушный</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="d">Думающий</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="e">Рефлексирующий</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="f">Готовый к оправданному риску</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="g">Эффективно общающийся</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="h">Гармоничный</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="i">Мотивированный</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="j">Принципиальный</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="k">Непредвзятый</button>
+            </div>
+            <button class="choice__btn btn" type="button">Получить результат</button>
+          </div>
+        </section>
+        <section class="result hide section">
+          <div class="result__container container"> 
+            <div class="result__main">
+              <div class="result__short">Итак, судя по всему, у вашего ребенка особенно развита склонность к <span>Коммуникации</span></div>
+              <div class="result__text">Универсальный метапредметный — и бытовой — навык. Умение налаживать связи с окружающими, чувствовать и узнавать настрой и мнение окружающих — все это важно в любой сфере деятельности. В школе «Летово» коммуникация (кстати, билингвальная!) — одна из основ учебного процесса. Отсутствие классов, широкая и разнообразная сеть взаимодействий, множество групповых форм работы помогают ребенку найти комфортное место в коллективе.</div>
+            </div>
+            <div class="result__form">	
+              <!--отправляться она должна по адресу:-->
+              <!--/save_form/-->
+              <form action="#" method="post">
+                <label class="field">
+                  <input type="text" name="name"><span class="field__hint">Имя родителя</span>
+                </label>
+                <label class="field">
+                  <input type="number" name="age"><span class="field__hint">Возраст ребенка</span>
+                </label>
+                <label class="field">
+                  <input type="email" name="email"><span class="field__hint">Email</span>
+                </label>
+                <button class="btn" type="submit">Отправить заявку</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer"></footer>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

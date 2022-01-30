@@ -1,0 +1,48 @@
+.header {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: vw(66);
+  pointer-events: none;
+
+  @include min(1920) {
+    padding-top: 66px;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: vw(1818);
+    margin: 0 auto;
+    padding: 0 vw(15);
+
+    @include min(1920) {
+      max-width: 1818px;
+      padding: 0 15px;
+    }
+
+    @include max(sm) {
+      max-width: none;
+      padding: 0 vw(24, 800);
+    }
+  }
+
+  &__logo {
+    width: vw(271);
+
+    @include min(1920) {
+      width: 271px;
+    }
+
+    @include max(sm) {
+      width: vw(227, 800);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: vw(23) vw(36);
+  font-size: vw(23);
+  line-height: 1;
+  color: $white;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+
+  border-radius: vw(34);
+  border: none;
+  background-color: $blue-0a;
+
+  transition: background-color 0.3s ease;
+
+  appearance: none;
+  cursor: pointer;
+
+  @include min(1920) {
+    padding: 23px 36px;
+    font-size: 23px;
+    border-radius: 34px;
+  }
+
+  @include max(sm) {
+    padding: vw(23, 800) vw(36, 800);
+    font-size: vw(23, 800);
+    border-radius: vw(34, 800);
+  }
+
+  @include hover {
+    background-color: $blue-15;
+  }
+}

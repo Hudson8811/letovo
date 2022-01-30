@@ -1,0 +1,49 @@
+extends ../layouts/default
+
+block vars
+	-
+		const page = {
+			title: 'Главная'
+		};
+
+block main
+	.fp#fullpage
+		section.hero.section
+			.hero__container.container
+				h1.hero__title Светлое будущее
+				.hero__text Узнайте, как помочь развитию своего ребенка
+				a.hero__btn.btn(href="#") Узнать
+		
+		section.choice.section
+			.choice__container.container
+				.choice__text Выберите 3 ключевых качества своего ребенка:
+				.choice__list.characteristics
+					each item in CHARACTERISTICS
+						button.characteristics__item(class="characteristics__item--" + item.mod, type="button", data-id= item.id)= item.text
+				button.choice__btn.btn(type="button") Получить результат
+		
+		section.result.hide.section
+			.result__container.container 
+				.result__main
+					.result__short Итак, судя по всему, у вашего ребенка особенно развита склонность к <span>Коммуникации</span>
+					.result__text Универсальный метапредметный — и бытовой — навык. Умение налаживать связи с окружающими, чувствовать и узнавать настрой и мнение окружающих — все это важно в любой сфере деятельности. В школе «Летово» коммуникация (кстати, билингвальная!) — одна из основ учебного процесса. Отсутствие классов, широкая и разнообразная сеть взаимодействий, множество групповых форм работы помогают ребенку найти комфортное место в коллективе.
+				.result__form 	
+
+					//- Имя родителя
+					//- Возраст ребенка
+					//- Почтовый адрес (email)
+
+					//отправляться она должна по адресу:
+					///save_form/
+					form(action="#", method="post")
+						label.field
+							input(type="text", name="name")
+							span.field__hint Имя родителя
+						label.field
+							input(type="number", name="age")
+							span.field__hint Возраст ребенка
+						label.field
+							input(type="email", name="email")
+							span.field__hint Email
+						
+						button.btn(type="submit") Отправить заявку

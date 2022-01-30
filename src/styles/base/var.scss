@@ -1,0 +1,30 @@
+/* media */
+$media-list: (
+  "xxs": 375,
+  "xs": 560,
+  "sm": 800,
+  "md": 1079,
+  "lg": 1279,
+  "xl": 1599,
+  "xxl": 1900,
+);
+
+/* шрифты */
+$mainFont: "Montserrat", sans-serif; //400 600 700
+$fs-main: 16px;
+
+/* цвета */
+$blue-0a: #0a2782;
+$white: #ffffff;
+$yellow-fd: #fdc300;
+$yellow-f8: #f8c300;
+$blue-15: #155684;
+$blue-2f: #2f87d2;
+
+$textMainColor: #52525a;
+
+// Retina
+//---------------------------------
+
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
