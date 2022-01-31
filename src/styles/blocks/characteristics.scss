@@ -5,7 +5,7 @@
 
   &__item {
     padding: 0 vw(8);
-    font-size: vw(61);
+    font-size: vw(56);
     line-height: 1.14754;
     color: $white;
     font-weight: 600;
@@ -19,7 +19,7 @@
 
     @include min(1920) {
       padding: 0 8px;
-      font-size: 61px;
+      font-size: 56px;
     }
 
     @include max(sm) {

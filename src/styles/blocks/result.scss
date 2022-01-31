@@ -45,4 +45,26 @@
       font-size: vw(24, 800);
     }
   }
+
+  &__field {
+    display: block;
+
+    & + & {
+      margin-top: 32px;
+    }
+  }
+
+  &__send {
+    margin-top: 32px;
+  }
+
+  .notify:not(:empty) {
+    margin-top: 24px;
+
+    &.error {
+      padding: 4px;
+      color: $white;
+      background-color: red;
+    }
+  }
 }

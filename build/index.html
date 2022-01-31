@@ -26,17 +26,17 @@
           <div class="choice__container container">
             <div class="choice__text">Выберите 3 ключевых качества своего ребенка:</div>
             <div class="choice__list characteristics">
-              <button class="characteristics__item characteristics__item--" type="button" data-id="a">Любознательный</button>
-              <button class="characteristics__item characteristics__item--" type="button" data-id="b">Знающий</button>
-              <button class="characteristics__item characteristics__item--" type="button" data-id="c">Неравнодушный</button>
-              <button class="characteristics__item characteristics__item--" type="button" data-id="d">Думающий</button>
               <button class="characteristics__item characteristics__item--" type="button" data-id="e">Рефлексирующий</button>
-              <button class="characteristics__item characteristics__item--" type="button" data-id="f">Готовый к оправданному риску</button>
               <button class="characteristics__item characteristics__item--" type="button" data-id="g">Эффективно общающийся</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="a">Любознательный</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="c">Неравнодушный</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="f">Готовый к оправданному риску</button>
               <button class="characteristics__item characteristics__item--" type="button" data-id="h">Гармоничный</button>
               <button class="characteristics__item characteristics__item--" type="button" data-id="i">Мотивированный</button>
               <button class="characteristics__item characteristics__item--" type="button" data-id="j">Принципиальный</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="d">Думающий</button>
               <button class="characteristics__item characteristics__item--" type="button" data-id="k">Непредвзятый</button>
+              <button class="characteristics__item characteristics__item--" type="button" data-id="b">Знающий</button>
             </div>
             <button class="choice__btn btn" type="button">Получить результат</button>
           </div>
@@ -50,17 +50,18 @@
             <div class="result__form">	
               <!--отправляться она должна по адресу:-->
               <!--/save_form/-->
-              <form action="#" method="post">
-                <label class="field">
+              <form action="https://echo.htmlacademy.ru" method="post">
+                <label class="result__field field">
                   <input type="text" name="name"><span class="field__hint">Имя родителя</span>
                 </label>
-                <label class="field">
+                <label class="result__field field">
                   <input type="number" name="age"><span class="field__hint">Возраст ребенка</span>
                 </label>
-                <label class="field">
-                  <input type="email" name="email"><span class="field__hint">Email</span>
+                <label class="result__field field">
+                  <input type="email" name="email" value="solo_83@bk.ru"><span class="field__hint">Email</span>
                 </label>
-                <button class="btn" type="submit">Отправить заявку</button>
+                <div class="notify"></div>
+                <button class="result__send btn" type="submit">Отправить заявку</button>
               </form>
             </div>
           </div>
