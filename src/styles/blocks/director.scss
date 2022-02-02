@@ -1,0 +1,260 @@
+.director {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  min-height: vw(900);
+  padding: vw(102) 0 0;
+
+  background-color: $yellow-fd;
+
+  @include min(1920) {
+    min-height: 900px;
+    padding: 102px 0 0;
+  }
+
+  @include max(sm) {
+    padding: vw(100, 800) 0 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+
+    @include max(sm) {
+      flex-direction: column;
+    }
+  }
+
+  &__intro {
+    position: relative;
+    left: vw(64);
+    width: 100%;
+    max-width: vw(960);
+    margin: 0 auto vw(45);
+    font-size: vw(48);
+    line-height: 1;
+    color: $blue-0a;
+    letter-spacing: 0.02em;
+    font-weight: 600;
+    align-self: center;
+
+    @include min(1920) {
+      left: 64px;
+      max-width: 960px;
+      margin: 0 auto 45px;
+      font-size: 48px;
+    }
+
+    @include max(sm) {
+      left: 0;
+      max-width: none; //vw(670, 800);
+      margin-bottom: vw(30, 800);
+      font-size: vw(32, 800);
+      text-align: center;
+    }
+  }
+
+  &__image {
+    position: relative;
+    flex-shrink: 0;
+    width: calc(100% - #{vw(810)});
+    //margin-left: vw(-390);
+    margin-top: vw(-10);
+    //margin-right: vw(-10);
+    padding-top: vw(667);
+    flex-shrink: 0;
+
+    @include min(1920) {
+      width: calc(100% - 810px);
+      //width: 805px;
+      //margin-left: -390px;
+      margin-top: -10px;
+      //margin-right: -10px;
+      padding-top: 667px;
+    }
+
+    @include max(sm) {
+      width: vw(350, 800);
+      margin: 0 auto vw(30, 800);
+      padding-top: 0;
+      order: -1;
+    }
+
+    img {
+      position: absolute;
+      right: vw(-85);
+      bottom: 0;
+      display: block;
+      //width: 100%;
+      width: vw(805);
+      max-width: none;
+      height: auto;
+
+      @include min(1920) {
+        right: -85px;
+        width: 805px;
+      }
+
+      @include max(sm) {
+        position: static;
+        width: 100%;
+      }
+    }
+  }
+
+  &__main {
+    position: relative;
+    left: vw(70);
+    width: vw(810);
+    //margin-right: vw(-71);
+    padding-bottom: vw(32);
+    flex-shrink: 0;
+
+    @include min(1920) {
+      left: 70px;
+      width: 810px;
+      //margin-right: -71px;
+      padding-bottom: 32px;
+    }
+
+    @include max(sm) {
+      position: static;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding-bottom: vw(32, 800);
+    }
+
+    blockquote {
+      padding-top: vw(10);
+      font-size: vw(24);
+      line-height: vw(32);
+      color: $blue-0a;
+      letter-spacing: 0.02em;
+      font-style: italic;
+
+      @include min(1920) {
+        padding-top: 10px;
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      @include max(sm) {
+        padding-top: 0;
+        font-size: vw(24, 800);
+        line-height: vw(32, 800);
+        text-align: center;
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      width: 100%;
+      margin-top: vw(40);
+
+      @include min(1920) {
+        margin-top: 40px;
+      }
+
+      @include max(sm) {
+        margin-top: vw(30, 800);
+        flex-direction: column;
+      }
+    }
+
+    &-action {
+      display: flex;
+      flex-direction: column;
+
+      @include max(sm) {
+        align-self: center;
+      }
+    }
+
+    &-btn {
+      align-self: flex-start;
+
+      & + & {
+        margin-top: vw(20);
+
+        @include min(1920) {
+          margin-top: 20px;
+        }
+
+        @include max(sm) {
+          margin-top: vw(20, 800);
+        }
+      }
+    }
+
+    &-social {
+      margin-top: vw(-10);
+      margin-left: auto;
+      align-self: flex-start;
+
+      @include min(1920) {
+        margin-top: -10px;
+      }
+
+      @include max(sm) {
+        margin-top: 0;
+        margin-left: 0;
+        align-self: center;
+      }
+    }
+
+    &-notify {
+      margin-top: vw(40);
+      width: vw(964);
+      font-size: vw(24);
+      color: $blue-0a;
+      letter-spacing: 0.02em;
+
+      @include min(1920) {
+        margin-top: 40px;
+        width: 964px;
+        font-size: 24px;
+      }
+
+      @include max(sm) {
+        margin-top: vw(30, 800);
+        width: 100%;
+        font-size: vw(24, 800);
+      }
+
+      p {
+        margin: 0;
+      }
+
+      a {
+        color: $blue-0a;
+        text-decoration: underline;
+
+        @include hover {
+          text-decoration: none;
+        }
+      }
+
+      .large {
+        margin-bottom: vw(10);
+        font-size: vw(30);
+        line-height: 1;
+        font-weight: 600;
+
+        @include min(1920) {
+          margin-bottom: 10px;
+          font-size: 30px;
+        }
+
+        @include max(sm) {
+          margin-bottom: vw(10, 800);
+          font-size: vw(30, 800);
+        }
+      }
+    }
+  }
+}

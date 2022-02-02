@@ -1,0 +1,116 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: vw(-20);
+
+  @include min(1920) {
+    margin-top: -20px;
+  }
+
+  @include max(sm) {
+    margin-top: vw(-20, 800);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    width: vw(65);
+    height: vw(65);
+    border-radius: 50%;
+    margin-right: vw(27);
+    margin-top: vw(20);
+    background-color: $white;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include min(1920) {
+      width: 65px;
+      height: 65px;
+      margin-right: 27px;
+      margin-top: 20px;
+    }
+
+    @include max(sm) {
+      width: vw(65, 800);
+      height: vw(65, 800);
+      margin-right: vw(27, 800);
+      margin-top: vw(20, 800);
+    }
+
+    svg {
+      display: block;
+      height: auto;
+      align-self: center;
+      fill: $blue-0a;
+      transition: fill 0.3s ease;
+    }
+
+    @include hover {
+      svg {
+        fill: $blue-2f;
+      }
+    }
+
+    &::active {
+      opacity: 0.7;
+    }
+
+    &--tw {
+      svg {
+        width: vw(26);
+
+        @include min(1920) {
+          width: 26px;
+        }
+
+        @include max(sm) {
+          width: vw(26, 800);
+        }
+      }
+    }
+
+    &--ok {
+      svg {
+        width: vw(19);
+
+        @include min(1920) {
+          width: 19px;
+        }
+
+        @include max(sm) {
+          width: vw(19, 800);
+        }
+      }
+    }
+
+    &--fb {
+      svg {
+        width: vw(15);
+
+        @include min(1920) {
+          width: 15px;
+        }
+
+        @include max(sm) {
+          width: vw(15, 800);
+        }
+      }
+    }
+
+    &--vk {
+      svg {
+        width: vw(18);
+
+        @include min(1920) {
+          width: 18px;
+        }
+
+        @include max(sm) {
+          width: vw(18, 800);
+        }
+      }
+    }
+  }
+}

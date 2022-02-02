@@ -1,70 +1,455 @@
 .result {
+  $self: &;
   height: 100vh;
-  padding: vw(52) 0;
-
-  @include min(1920) {
-    padding: 52px 0;
-  }
+  padding: vw(157) 0 0;
 
   background-color: $yellow-fd;
+  background-repeat: no-repeat;
+  background-position: left 50% bottom vw(-655);
+  background-size: vw(1597) vw(1597);
+  background-image: radial-gradient(
+    50% 50% at 50% 50%,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  @include min(1920) {
+    padding: 157px 0 0;
+
+    background-position: left 50% bottom -655px;
+    background-size: 1597px 1597px;
+  }
+
+  @include max(sm) {
+    padding: vw(128, 800) 0 0;
+
+    background-size: 97.375% auto;
+  }
+
+  &--communication {
+    #{$self}__image {
+      width: vw(705);
+      margin-left: vw(-322);
+      margin-top: vw(-31);
+
+      @include min(1920) {
+        width: 705px;
+        margin-left: -322px;
+        margin-top: -31px;
+      }
+
+      @include max(sm) {
+        width: auto;
+        height: vw(300, 800);
+        margin: 0 auto vw(30, 800);
+      }
+    }
+
+    #{$self}__main {
+      padding-left: vw(16);
+
+      @include min(1920) {
+        padding-left: 16px;
+      }
+
+      @include max(sm) {
+        padding-left: 0;
+      }
+
+      &-text {
+        padding-right: vw(34);
+
+        @include min(1920) {
+          padding-right: 34px;
+        }
+
+        @include max(sm) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  &--cooperation {
+    #{$self}__image {
+      width: vw(657);
+      margin-left: vw(-287);
+      margin-top: vw(5);
+
+      @include min(1920) {
+        width: 657px;
+        margin-left: -287px;
+        margin-top: 5px;
+      }
+
+      @include max(sm) {
+        width: auto;
+        height: vw(300, 800);
+        margin: 0 auto vw(30, 800);
+      }
+    }
+
+    #{$self}__main {
+      padding-left: vw(30);
+
+      @include min(1920) {
+        padding-left: 30px;
+      }
+
+      @include max(sm) {
+        padding-left: 0;
+      }
+
+      &-text {
+        padding-right: vw(34);
+
+        @include min(1920) {
+          padding-right: 34px;
+        }
+
+        @include max(sm) {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  &--self-organization {
+    #{$self}__title {
+      margin-top: vw(-10);
+
+      @include min(1920) {
+        margin-top: -10px;
+      }
+
+      @include max(sm) {
+        margin-top: 0;
+      }
+    }
+
+    #{$self}__image {
+      width: vw(510);
+      margin-left: vw(-195);
+      margin-top: vw(9);
+
+      @include min(1920) {
+        width: 510px;
+        margin-left: -195px;
+        margin-top: 9px;
+      }
+
+      @include max(sm) {
+        width: auto;
+        height: vw(300, 800);
+        margin: 0 auto vw(30, 800);
+      }
+    }
+
+    #{$self}__main {
+      margin-left: vw(80);
+
+      @include min(1920) {
+        margin-left: 80px;
+      }
+
+      @include max(sm) {
+        margin-left: 0;
+      }
+
+      &-bottom {
+        margin-top: 26px;
+
+        @include min(1920) {
+          margin-top: 26px;
+        }
+
+        @include max(sm) {
+          margin-top: vw(32, 800);
+        }
+      }
+    }
+  }
+  &--study {
+    #{$self}__title {
+      margin-top: vw(-7);
+
+      @include min(1920) {
+        margin-top: -7px;
+      }
+
+      @include max(sm) {
+        margin-top: 0;
+      }
+    }
+
+    #{$self}__image {
+      width: vw(468);
+      margin-left: vw(-211);
+      margin-top: vw(3);
+
+      @include min(1920) {
+        width: 468px;
+        margin-left: -211px;
+        margin-top: 3px;
+      }
+
+      @include max(sm) {
+        width: auto;
+        height: vw(300, 800);
+        margin: 0 auto vw(30, 800);
+      }
+    }
+
+    #{$self}__main {
+      margin-left: vw(139);
+      margin-top: vw(-8);
+
+      @include min(1920) {
+        margin-left: 139px;
+        margin-top: -8px;
+      }
+
+      @include max(sm) {
+        margin-left: 0;
+        margin-top: 0;
+      }
+
+      &-text {
+        padding-right: vw(34);
+
+        @include min(1920) {
+          padding-right: 34px;
+        }
+
+        @include max(sm) {
+          padding-right: 0;
+        }
+      }
+
+      &-bottom {
+        margin-top: vw(31);
+
+        @include min(1920) {
+          margin-top: 31px;
+        }
+
+        @include max(sm) {
+          margin-top: vw(32, 800);
+        }
+      }
+    }
+  }
+  &--critical-thinking {
+    #{$self}__title {
+      max-width: vw(720);
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: vw(-74);
+      line-height: 0.87;
+
+      @include min(1920) {
+        max-width: 720px;
+        margin-top: -74px;
+      }
+
+      @include max(sm) {
+        max-width: none;
+        margin-top: 0;
+      }
+    }
+
+    #{$self}__image {
+      width: vw(311);
+      margin-left: vw(-84);
+      margin-top: vw(-56);
+
+      @include min(1920) {
+        width: 311px;
+        margin-left: -84px;
+        margin-top: -56px;
+      }
+
+      @include max(sm) {
+        width: auto;
+        height: vw(300, 800);
+        margin: 0 auto vw(30, 800);
+      }
+    }
+
+    #{$self}__main {
+      margin-left: vw(172);
+      margin-top: vw(-14);
+
+      @include min(1920) {
+        margin-left: 172px;
+        margin-top: -14px;
+      }
+
+      @include max(sm) {
+        margin-left: 0;
+        margin-top: 0;
+      }
+
+      &-text {
+        padding-right: vw(34);
+
+        @include min(1920) {
+          padding-right: 34px;
+        }
+
+        @include max(sm) {
+          padding-right: 0;
+        }
+      }
+
+      &-bottom {
+        margin-top: vw(31);
+
+        @include min(1920) {
+          margin-top: 31px;
+        }
+
+        @include max(sm) {
+          margin-top: vw(32, 800);
+        }
+      }
+    }
+  }
 
   &.hide {
     display: none;
   }
 
-  &__container {
+  &__grid {
     display: flex;
+
+    @include max(sm) {
+      display: block;
+    }
+  }
+
+  &__image {
+    position: relative;
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      @include max(sm) {
+        width: auto;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   }
 
   &__main {
-    width: 50%;
-    margin-right: 80px;
-  }
-
-  &__form {
-    width: calc(50% - 80px);
-  }
-
-  &__short {
-    max-width: vw(511);
-    margin: 0 0 vw(37);
-    font-size: vw(31);
-    line-height: 1.2;
-    color: $blue-0a;
-    font-weight: 600;
+    width: vw(835);
+    flex-shrink: 0;
 
     @include min(1920) {
-      max-width: 511px;
-      margin: 0 0 37px;
-      font-size: 31px;
+      width: 835px;
     }
 
     @include max(sm) {
-      max-width: vw(400, 800);
-      margin-bottom: vw(40, 800);
-      font-size: vw(24, 800);
+      width: 100%;
+      padding-bottom: vw(32, 800);
+    }
+
+    &-text {
+      font-size: vw(24);
+      line-height: 1.5;
+      color: $blue-0a;
+      letter-spacing: 0.02em;
+
+      @include min(1920) {
+        font-size: 24px;
+      }
+
+      @include max(sm) {
+        font-size: vw(24, 800);
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      width: 100%;
+      margin-top: vw(50);
+
+      @include min(1920) {
+        margin-top: 50px;
+      }
+
+      @include max(sm) {
+        margin-top: vw(32, 800);
+        flex-direction: column;
+      }
+    }
+
+    &-action {
+      display: flex;
+      flex-direction: column;
+
+      @include max(sm) {
+        align-self: center;
+      }
+    }
+
+    &-btn {
+      align-self: flex-start;
+
+      @include max(sm) {
+        align-self: center;
+      }
+
+      & + & {
+        margin-top: vw(20);
+
+        @include min(1920) {
+          margin-top: 20px;
+        }
+
+        @include max(sm) {
+          margin-top: vw(20, 800);
+        }
+      }
+    }
+
+    &-social {
+      margin-top: vw(-10);
+      margin-left: auto;
+      align-self: flex-start;
+
+      @include min(1920) {
+        margin-top: -10px;
+      }
+
+      @include max(sm) {
+        margin-top: 0;
+        margin-left: 0;
+        align-self: center;
+      }
     }
   }
 
-  &__field {
-    display: block;
+  &__title {
+    margin: 0 auto vw(54);
+    font-size: vw(96);
+    line-height: 1;
+    color: $blue-0a;
+    letter-spacing: 0.02em;
+    text-align: center;
+    font-weight: 700;
 
-    & + & {
-      margin-top: 32px;
+    @include min(1920) {
+      margin: 0 auto 54px;
+      font-size: 96px;
     }
-  }
 
-  &__send {
-    margin-top: 32px;
-  }
-
-  .notify:not(:empty) {
-    margin-top: 24px;
-
-    &.error {
-      padding: 4px;
-      color: $white;
-      background-color: red;
+    @include max(sm) {
+      margin-bottom: vw(36, 800);
+      font-size: vw(51, 800);
     }
   }
 }

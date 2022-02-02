@@ -1,12 +1,26 @@
 .characteristics {
+  $self: &;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
+  &.done {
+    #{$self}__item:not(#{$self}__item--selected) {
+      pointer-events: none;
+    }
+  }
+
+  &.blocked {
+    #{$self}__item {
+      pointer-events: none;
+    }
+  }
+
   &__item {
     padding: 0 vw(8);
-    font-size: vw(56);
-    line-height: 1.14754;
+    font-size: vw(64);
+    line-height: 1;
+    letter-spacing: 0.02em;
     color: $white;
     font-weight: 600;
 
@@ -19,12 +33,12 @@
 
     @include min(1920) {
       padding: 0 8px;
-      font-size: 56px;
+      font-size: 64px;
     }
 
     @include max(sm) {
       padding: 0 vw(4, 800);
-      font-size: vw(29, 800);
+      font-size: vw(36, 800);
     }
 
     @include hover {

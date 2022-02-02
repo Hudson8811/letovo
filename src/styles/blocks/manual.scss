@@ -1,0 +1,96 @@
+.manual {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  min-height: vw(900);
+  padding: vw(160) 0 vw(58);
+  background-color: $yellow-fd;
+
+  @include min(1920) {
+    min-height: 900px;
+    padding: 160px 0 58px;
+  }
+
+  @include max(sm) {
+    min-height: 0;
+    padding: vw(120, 800) 0 0;
+  }
+
+  &__container {
+  }
+
+  &__intro {
+    max-width: vw(1030);
+    margin: 0 auto vw(45);
+    font-size: vw(32);
+    line-height: 1;
+    color: $blue-0a;
+    letter-spacing: 0.02em;
+    text-align: center;
+    font-weight: 600;
+    align-self: center;
+
+    @include min(1920) {
+      max-width: 1030px;
+      margin: 0 auto 45px;
+      font-size: 32px;
+    }
+
+    @include max(sm) {
+      max-width: none;
+      margin: 0 auto vw(45, 800);
+      font-size: vw(32, 800);
+    }
+  }
+
+  &__text {
+    //width: vw(1180);
+    margin: 0 0 vw(43);
+    font-size: vw(24);
+    line-height: vw(32);
+    color: $blue-0a;
+    letter-spacing: 0.02em;
+    text-align: center;
+    font-weight: 400;
+    align-self: center;
+
+    p {
+      margin: 0;
+    }
+
+    p + p {
+      margin-top: vw(32);
+    }
+
+    @include min(1920) {
+      margin: 0 0 43px;
+      font-size: 24px;
+      line-height: 32px;
+
+      p + p {
+        margin-top: 32px;
+      }
+    }
+
+    @include max(sm) {
+      margin: 0 0 vw(43, 800);
+      font-size: vw(24, 800);
+      line-height: vw(32, 800);
+
+      p + p {
+        margin-top: vw(32, 800);
+      }
+    }
+  }
+
+  &__btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include max(sm) {
+      margin: 0 0 vw(32, 800);
+    }
+  }
+}

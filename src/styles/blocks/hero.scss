@@ -2,93 +2,75 @@
   position: relative;
   overflow: hidden;
   height: 100vh;
-  padding: vw(52) 0;
+  min-height: vw(900);
+  padding: vw(66) 0;
 
   background-color: $yellow-fd;
   background-repeat: no-repeat;
-  background-position: left 50% bottom 0;
-  background-size: vw(1138) auto, auto 100%;
-  background-image: url("../images/kinds.svg"), url("../images/hero-bg.jpg");
+  background-position: left 50% bottom 0, left 50% bottom vw(-655);
+  background-size: vw(1138) auto, vw(1597) vw(1597);
+  background-image: url("../images/kinds.svg"),
+    radial-gradient(50% 50% at 50% 50%, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 
   @include min(1920) {
-    padding: 52px 0;
-    background-size: 1138px auto, cover;
+    min-height: 900px;
+    padding: 66px 0;
+
+    background-position: left 50% bottom 0, left 50% bottom -655px;
+    background-size: 1138px auto, 1597px 1597px;
   }
 
   @include max(sm) {
     padding: vw(128, 800) 0;
-
-    background-size: 97.375% auto, cover;
-    background-image: url("../images/kinds.svg"),
-      url("../images/hero-bg-mobile.jpg");
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: 200% auto;
-    background-image: url("../images/section-bg.png");
-    pointer-events: none;
-  }
-
-  &::before {
-    left: 0;
-    background-position: 0 0;
-  }
-
-  &::after {
-    right: 0;
-    background-position: right 0 top 0;
+    background-size: 97.375% auto, vw(800, 800) vw(800, 800);
+    background-position: left 50% bottom 0, left 50% bottom vw(-300, 800);
   }
 
   &__container {
   }
 
   &__title {
-    max-width: vw(470);
-    margin: 0 auto vw(28);
-    font-size: vw(88);
-    line-height: 1.1;
+    max-width: vw(870);
+    margin: 0 auto vw(25);
+    font-size: vw(96);
+    line-height: 1;
     color: $blue-0a;
+    letter-spacing: 0.02em;
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
 
     @include min(1920) {
-      max-width: 470px;
-      margin: 0 auto 28px;
-      font-size: 88px;
+      max-width: 870px;
+      margin: 0 auto 25px;
+      font-size: 96px;
     }
 
     @include max(sm) {
-      max-width: vw(274, 800);
+      max-width: vw(460, 800);
       margin-bottom: vw(36, 800);
       font-size: vw(51, 800);
     }
   }
 
   &__text {
-    max-width: vw(511);
-    margin: 0 auto vw(37);
-    font-size: vw(31);
-    line-height: 1.2;
+    max-width: vw(906);
+    margin: 0 auto vw(27);
+    font-size: vw(32);
+    line-height: 1;
+    letter-spacing: 0.02em;
     color: $blue-0a;
     text-align: center;
     font-weight: 600;
 
     @include min(1920) {
-      max-width: 511px;
-      margin: 0 auto 37px;
-      font-size: 31px;
+      max-width: 906px;
+      margin: 0 auto 27px;
+      font-size: 32px;
     }
 
     @include max(sm) {
-      max-width: vw(400, 800);
+      max-width: vw(670, 800);
       margin-bottom: vw(40, 800);
       font-size: vw(24, 800);
     }
@@ -98,14 +80,14 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    min-width: vw(260);
+    min-width: vw(300);
 
     @include min(1920) {
-      min-width: 260px;
+      min-width: 300px;
     }
 
     @include max(sm) {
-      min-width: vw(260, 800);
+      min-width: vw(300, 800);
     }
   }
 }

@@ -4,21 +4,23 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding-top: vw(66);
+  padding-top: vw(51);
   pointer-events: none;
 
   @include min(1920) {
-    padding-top: 66px;
+    padding-top: 51px;
   }
 
   &__container {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    max-width: vw(1818);
+    max-width: vw(1715);
     margin: 0 auto;
     padding: 0 vw(15);
 
     @include min(1920) {
-      max-width: 1818px;
+      max-width: 1715px;
       padding: 0 15px;
     }
 
@@ -29,14 +31,36 @@
   }
 
   &__logo {
-    width: vw(271);
+    width: vw(292);
 
     @include min(1920) {
-      width: 271px;
+      width: 292px;
     }
 
     @include max(sm) {
       width: vw(227, 800);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__woman {
+    width: vw(243);
+    margin-top: vw(20);
+    margin-right: vw(22);
+
+    @include min(1920) {
+      width: 243px;
+      margin-top: 20px;
+      margin-right: 22px;
+    }
+
+    @include max(sm) {
+      width: vw(190, 800);
     }
 
     img {
