@@ -1,5 +1,6 @@
 .result {
   $self: &;
+  display: flex;
   height: 100vh;
   padding: vw(157) 0 0;
 
@@ -21,6 +22,7 @@
   }
 
   @include max(sm) {
+    display: block;
     padding: vw(128, 800) 0 0;
 
     background-size: 97.375% auto;
@@ -28,14 +30,14 @@
 
   &--communication {
     #{$self}__image {
-      width: vw(705);
-      margin-left: vw(-322);
-      margin-top: vw(-31);
+      width: vw(625);
+      margin-left: vw(-295);
+      margin-top: vw(-47);
 
       @include min(1920) {
-        width: 705px;
-        margin-left: -322px;
-        margin-top: -31px;
+        width: 625px;
+        margin-left: -295px;
+        margin-top: -47px;
       }
 
       @include max(sm) {
@@ -46,13 +48,18 @@
     }
 
     #{$self}__main {
+      position: relative;
+      left: vw(54);
       padding-left: vw(16);
 
       @include min(1920) {
         padding-left: 16px;
+        left: 54px;
       }
 
       @include max(sm) {
+        position: static;
+        left: 0;
         padding-left: 0;
       }
 
@@ -316,6 +323,10 @@
 
   &.hide {
     display: none;
+  }
+
+  &__container {
+    align-self: center;
   }
 
   &__grid {

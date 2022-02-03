@@ -13,16 +13,19 @@ window.addEventListener('load', () => {
     k: 2,
   };
 
+  
+  const resultTypes = ['communication',  'cooperation', 'self-organization',  'study',  'critical-thinking'];
+
   const results = [
     {
       title: 'Коммуникация',
       text: 'Универсальный метапредметный — и бытовой — навык. Умение налаживать связи с окружающими, чувствовать и узнавать настрой и мнение окружающих — все это важно в любой сфере деятельности. В школе «Летово» коммуникация (кстати, билингвальная!) — одна из основ учебного процесса. Отсутствие классов, широкая и разнообразная сеть взаимодействий, множество групповых форм работы помогают ребенку найти комфортное место в коллективе.',
       image: {
         name: 'communication.svg',
-        width: '705',
-        height: '624'
+        width: '625',
+        height: '640'
       },
-      mod: 'communication'
+      mod: resultTypes[0]
     },
     {
       title: 'Сотрудничество',
@@ -32,7 +35,7 @@ window.addEventListener('load', () => {
         width: '657',
         height: '590'
       },
-      mod: 'cooperation'
+      mod: resultTypes[1]
     },
     {
       title: 'Самоорганизация',
@@ -42,7 +45,7 @@ window.addEventListener('load', () => {
         width: '510',
         height: '532'
       },
-      mod: 'self-organization'
+      mod: resultTypes[2]
     },
     {
       title: 'Исследование',
@@ -52,7 +55,7 @@ window.addEventListener('load', () => {
         width: '468',
         height: '560'
       },
-      mod: 'study'
+      mod: resultTypes[3]
     },
     {
       title: 'Критическое мышление',
@@ -62,7 +65,7 @@ window.addEventListener('load', () => {
         width: '311',
         height: '653'
       },
-      mod: 'critical-thinking'
+      mod: resultTypes[4]
     }
   ];
 
@@ -76,37 +79,13 @@ window.addEventListener('load', () => {
   const resultImageWrapp = document.querySelector('.result__image');
 
   const resultResetButton = resultSection.querySelector('.__js_reset-result');
+  const goToChoiceButton = document.querySelector('.manual__btn');
 
   let isMobile = document.documentElement.clientWidth <= 800;
   let isDesktopFullpageActive = !isMobile;
   let isMobileFullpageActive = isMobile;
-  let isReset = false;
   let fp = null;
   const scrollingSpeed = 700;
-
-  const fpOptions = {
-    licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
-    autoScrolling: true,
-    scrollHorizontally: false,
-    verticalCentered: false,
-    scrollOverflow: isMobile,
-    scrollingSpeed: scrollingSpeed,
-    afterLoad: function() {
-      if (isReset) {
-        /*resultSection.className = 'result hide';
-        resultTitle.textContent = '';
-        resultText.textContent = '';
-        resultImageWrapp.innerHTML = '';
-        fp.destroy('all');
-        choiceSection.classList.add('active')
-        fp = new fullpage('#fullpage', fpOptions);
-
-        isReset = false;*/
-      }
-    }
-  };
-
-  fp = new fullpage('#fullpage', fpOptions);
 
   const modClass = 'characteristics__item--selected';
   const maxSelected = 3;
@@ -114,10 +93,47 @@ window.addEventListener('load', () => {
 
   let selectedIds = [];
 
+  const shareTitle = 'Мой результат теста - Какой он, Ваш ребенок.';
+  const shareData = {
+    vk: 'https://vk.com/share.php?url=<URL>',
+    ok: 'https://connect.ok.ru/offer?url=<URL>&title=' + shareTitle,
+    fb: 'https://www.facebook.com/sharer/sharer.php?u=<URL>',
+    tw: 'https://twitter.com/intent/tweet?text=' + shareTitle + '&url=<URL>'
+  };
+
+  const fpOptions = {
+    licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
+    autoScrolling: true,
+    scrollHorizontally: false,
+    verticalCentered: false,
+    scrollOverflow: isMobile,
+    scrollingSpeed: scrollingSpeed
+  };
+
   const reinit = (section) => {
     fp.destroy('all');
     section.classList.add('active')
     fp = new fullpage('#fullpage', fpOptions);
+  };
+  
+  const getResultUrl = (ids, hash) => {
+    return `${window.location.href}?ch1=${ids[0]}&ch2=${ids[1]}&ch3=${ids[2]}#${hash}`;
+  };
+
+  const getSelectedFromUrlParams = () => {
+    const paramsStr = window.location.href.split('#')[0].split('?')[1];
+    const params = paramsStr.split('&');
+    return params.map((param) => param.split('=')[1]);
+  };
+
+  const setShareLinks = (ids, hash) => {
+    const socialItems = resultSection.querySelectorAll('.social__item');
+    const url = getResultUrl(ids, hash);
+
+    socialItems.forEach(it => {
+      const modClass = it.className.split('social__item social__item--')[1];
+      it.href = shareData[modClass].replace('<URL>', url);
+    });
   };
 
   const debounce = function(func, wait, immediate) {
@@ -163,18 +179,17 @@ window.addEventListener('load', () => {
     const setFromIndexes = new Set(indexes);
 
     const index = (setFromIndexes.size === indexes.length) ? indexes[0] : getDublicate(indexes);
-
     const resultItem = results[index - 1];
+
+    setShareLinks(selectedIds, resultItem.mod);
 
     const image = new Image();
     image.src = `images/${resultItem.image.name}`;
     image.width = resultItem.image.width;
     image.height = resultItem.image.height;
 
-  
     resultSection.classList.remove('hide');
     resultSection.classList.add('section', `result--${resultItem.mod}`);
-
 
     resultTitle.textContent = resultItem.title;
     resultText.textContent = resultItem.text;
@@ -249,13 +264,23 @@ window.addEventListener('load', () => {
     }
   }, 50, false);
 
-  // Только для тестирования
-  window.createResult = (num) => {
-    const activeSection = document.querySelector('.section.active');
-      fp.destroy('all');
-    
-      ////////////////////////////////////
-    const resultItem = results[num - 1];
+  const createResult = (num) => {
+    const selectedChListdItems = getSelectedFromUrlParams();
+
+    chList.classList.add('blocked', 'done');
+    Array.from(chList.children).forEach((it) => {
+      const isSelected = selectedChListdItems.includes(it.dataset.id);
+      if (isSelected) {
+        it.classList.add(modClass);
+      }
+    });
+
+    showResultButton.onclick = resetResult;
+    resultResetButton.onclick = resetResult;
+    showResultButton.textContent = 'Выбрать еще раз';
+
+    ////////////////////////////////////
+    const resultItem = results[num];
     const image = new Image();
     image.src = `images/${resultItem.image.name}`;
     image.width = resultItem.image.width;
@@ -270,12 +295,26 @@ window.addEventListener('load', () => {
     resultImageWrapp.appendChild(image);
     
     ///////////////////////////////
-    activeSection.classList.add('active');
     fp = new fullpage('#fullpage', fpOptions);
-    fp.moveSectionDown();
+    fp.silentMoveTo(5)
+
+
   };
 
   ////////////////////////////////////////////////////
+  const hash = window.location.hash.split('#')[1];
+  console.log(hash)
+
+  if (resultTypes.includes(hash)) {
+    const index = resultTypes.indexOf(hash);
+    console.log('cooperation ', index)
+    createResult(index);
+  } else {
+    fp = new fullpage('#fullpage', fpOptions);
+    
+    showResultButton.onclick = showResult;
+    resultResetButton.onclick = resetResult;
+  }
 
   window.addEventListener('resize', () => {
     isMobile = document.documentElement.clientWidth <= 800;
@@ -315,9 +354,11 @@ window.addEventListener('load', () => {
 
   heroButton.onclick = (e) => {
     e.preventDefault();
-    fp.moveTo(2);
+    fp.moveTo(3);
   };
 
-  showResultButton.onclick = showResult;
-  resultResetButton.onclick = resetResult;
+  goToChoiceButton.onclick = (e) => {
+    e.preventDefault();
+    fp.moveSectionDown();
+  }
 });

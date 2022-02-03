@@ -36,20 +36,20 @@ block main
 
 		section.manual.section
 			.manual__container.container
-				.manual__intro Выберите 3 ключевые характеристики вашего ребенка, поставив на первое место наиболее ярко выраженную
+				//-.manual__intro Выберите 3 ключевые характеристики вашего ребенка, поставив на первое место наиболее ярко выраженную
 				.manual__text
 					p Времена, когда про школьника говорили: <i>«С математикой хорошо, будет инженером»</i>, — прошли. Сейчас, решая, чем помочь ребенку в учебе и выборе будущего, стоит сконцентрироваться на метапредметных навыках — тех самых универсальных компетенциях, которые важны в любой профессиональной сфере. 
 					p Какой он, ваш ребенок? Он любит в одиночестве обдумывать захватившую его идею? у него всегда есть план, которому он следует? А может, он очень общителен? 
 					p Выберите три характеристики, которые лучше всего описывают вашего ребенка (самую точную характеристику отметьте первой), и узнайте, какой из имеющихся у него метапредметных навыков самый перспективный — и чем это хорошо для его образовательного и карьерного трека.
 				
-				a.manual__btn.btn(href="https://letovo.ru/") Узнать подробнее
+				button.manual__btn.btn(type="button") Узнать подробнее
 
 		section.choice.section
 			.choice__container.container
 				.choice__intro Выберите 3 ключевые характеристики вашего ребенка, поставив на первое место наиболее ярко выраженную
 				.choice__list.characteristics
 					each item in CHARACTERISTICS
-						button.characteristics__item(class="characteristics__item--" + item.mod, type="button", data-id= item.id)= item.text
+						button.characteristics__item(type="button", data-id= item.id)= item.text
 				button.choice__btn.btn(type="button") Получить результат
 
 		section.result.hide
@@ -63,7 +63,7 @@ block main
 
 						.result__main-bottom
 							.result__main-action
-								a.result__main-btn.btn(href="https://letovo.ru/") Подать заявку
+								a.result__main-btn.btn(href="https://letovo.ru/", target="_blank") Подать заявку
 								button.result__main-btn.btn.__js_reset-result(type="button") Выбрать еще раз
 							.result__main-social.social
 								each item in SOCIALS
