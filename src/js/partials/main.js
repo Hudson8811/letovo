@@ -105,7 +105,7 @@ window.addEventListener('load', () => {
     licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
     autoScrolling: true,
     scrollHorizontally: false,
-    verticalCentered: false,
+    verticalCentered: isMobile,
     scrollOverflow: isMobile,
     scrollingSpeed: scrollingSpeed
   };
@@ -236,6 +236,7 @@ window.addEventListener('load', () => {
     resultResetButton.onclick = null;
 
     chList.classList.remove('blocked', 'done');
+    selectedIds = [];
     selectedCount = 0;
     chList.querySelectorAll('.characteristics__item').forEach((it) => it.classList.remove(modClass));
 

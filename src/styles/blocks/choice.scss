@@ -14,13 +14,18 @@
   }
 
   @include max(sm) {
-    padding: vw(120, 800) 0 0;
+    padding: 0;
+    //padding: vw(120, 800) 0 0;
   }
 
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include max(sm) {
+      padding-top: vw(130, 800);
+    }
   }
 
   &__intro {

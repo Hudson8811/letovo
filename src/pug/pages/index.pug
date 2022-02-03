@@ -49,7 +49,7 @@ block main
 				.choice__intro Выберите 3 ключевые характеристики вашего ребенка, поставив на первое место наиболее ярко выраженную
 				.choice__list.characteristics
 					each item in CHARACTERISTICS
-						button.characteristics__item(type="button", data-id= item.id)= item.text
+						button.characteristics__item(type="button", data-id= item.id, title= item.num)= item.text
 				button.choice__btn.btn(type="button") Получить результат
 
 		section.result.hide

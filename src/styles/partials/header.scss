@@ -11,6 +11,10 @@
     padding-top: 51px;
   }
 
+  @include max(sm) {
+    background-color: $yellow-fd;
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;

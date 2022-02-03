@@ -23,7 +23,8 @@
 
   @include max(sm) {
     display: block;
-    padding: vw(128, 800) 0 0;
+    padding: 0;
+    //padding: vw(128, 800) 0 0;
 
     background-size: 97.375% auto;
   }
@@ -327,6 +328,10 @@
 
   &__container {
     align-self: center;
+
+    @include max(sm) {
+      padding-top: vw(128, 800);
+    }
   }
 
   &__grid {
