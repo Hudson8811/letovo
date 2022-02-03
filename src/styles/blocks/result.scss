@@ -26,7 +26,9 @@
     padding: 0;
     //padding: vw(128, 800) 0 0;
 
-    background-size: 97.375% auto;
+    background-size: vw(1597, 800) auto;
+
+    background-position: left 50% bottom vw(-832, 800);
   }
 
   &--communication {
@@ -43,8 +45,8 @@
 
       @include max(sm) {
         width: auto;
-        height: vw(300, 800);
-        margin: 0 auto vw(30, 800);
+        height: vw(521, 800);
+        margin: vw(26, 800) auto 0;
       }
     }
 
@@ -91,8 +93,8 @@
 
       @include max(sm) {
         width: auto;
-        height: vw(300, 800);
-        margin: 0 auto vw(30, 800);
+        height: vw(521, 800);
+        margin: vw(26, 800) auto 0;
       }
     }
 
@@ -146,8 +148,8 @@
 
       @include max(sm) {
         width: auto;
-        height: vw(300, 800);
-        margin: 0 auto vw(30, 800);
+        height: vw(521, 800);
+        margin: vw(26, 800) auto 0;
       }
     }
 
@@ -201,8 +203,8 @@
 
       @include max(sm) {
         width: auto;
-        height: vw(300, 800);
-        margin: 0 auto vw(30, 800);
+        height: vw(521, 800);
+        margin: vw(26, 800) auto 0;
       }
     }
 
@@ -277,8 +279,8 @@
 
       @include max(sm) {
         width: auto;
-        height: vw(300, 800);
-        margin: 0 auto vw(30, 800);
+        height: vw(521, 800);
+        margin: vw(26, 800) auto 0;
       }
     }
 
@@ -330,7 +332,7 @@
     align-self: center;
 
     @include max(sm) {
-      padding-top: vw(128, 800);
+      padding-top: vw(238, 800);
     }
   }
 
@@ -338,13 +340,17 @@
     display: flex;
 
     @include max(sm) {
-      display: block;
+      flex-direction: column;
     }
   }
 
   &__image {
     position: relative;
     flex-shrink: 0;
+
+    @include max(sm) {
+      order: 1;
+    }
 
     img {
       display: block;
@@ -370,7 +376,6 @@
 
     @include max(sm) {
       width: 100%;
-      padding-bottom: vw(32, 800);
     }
 
     &-text {
@@ -385,6 +390,7 @@
 
       @include max(sm) {
         font-size: vw(24, 800);
+        text-align: center;
       }
     }
 
@@ -442,7 +448,7 @@
       }
 
       @include max(sm) {
-        margin-top: 0;
+        margin-top: vw(22, 800);
         margin-left: 0;
         align-self: center;
       }
@@ -464,8 +470,8 @@
     }
 
     @include max(sm) {
-      margin-bottom: vw(36, 800);
-      font-size: vw(51, 800);
+      margin-bottom: vw(28, 800);
+      font-size: vw(72, 800);
     }
   }
 }

@@ -4,6 +4,10 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  @include max(sm) {
+    flex-direction: column;
+  }
+
   &.done {
     #{$self}__item:not(#{$self}__item--selected) {
       pointer-events: none;
@@ -38,7 +42,8 @@
 
     @include max(sm) {
       padding: 0 vw(4, 800);
-      font-size: vw(36, 800);
+      font-size: vw(48, 800);
+      align-self: center;
     }
 
     @include hover {
@@ -48,36 +53,5 @@
     &--selected {
       color: $blue-0a;
     }
-
-    &--s1 {
-      font-size: 66px;
-    }
-
-    &--s2 {
-      font-size: 75px;
-    }
-
-    &--s3 {
-      font-size: 80px;
-    }
-
-    &--s4 {
-      font-size: 90px;
-    }
-
-    &--s5 {
-      font-size: 101px;
-    }
-
-    &--s6 {
-      font-size: 148px;
-    }
-
-    //font-size: 66px;
-    //font-size: 75px;
-    //font-size: 80px;
-    //font-size: 90px;
-    //font-size: 101px;
-    //font-size: 148px;
   }
 }

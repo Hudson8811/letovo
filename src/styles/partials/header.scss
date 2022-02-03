@@ -5,13 +5,14 @@
   left: 0;
   width: 100%;
   padding-top: vw(51);
-  pointer-events: none;
+  //pointer-events: none;
 
   @include min(1920) {
     padding-top: 51px;
   }
 
   @include max(sm) {
+    padding-top: vw(50, 800);
     background-color: $yellow-fd;
   }
 
@@ -30,19 +31,25 @@
 
     @include max(sm) {
       max-width: none;
-      padding: 0 vw(24, 800);
+      padding: 0 vw(74, 800);
     }
   }
 
   &__logo {
+    display: block;
     width: vw(292);
+    transition: opacity 0.3s ease;
 
     @include min(1920) {
       width: 292px;
     }
 
     @include max(sm) {
-      width: vw(227, 800);
+      width: vw(292, 800);
+    }
+
+    @include hover {
+      opacity: 0.5;
     }
 
     img {
@@ -64,7 +71,9 @@
     }
 
     @include max(sm) {
-      width: vw(190, 800);
+      width: vw(243, 800);
+      margin-top: vw(22, 800);
+      margin-right: vw(36, 800);
     }
 
     img {

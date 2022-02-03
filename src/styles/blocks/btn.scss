@@ -27,8 +27,8 @@
 
   @include max(sm) {
     padding: vw(23, 800) vw(36, 800);
-    font-size: vw(23, 800);
-    border-radius: vw(34, 800);
+    font-size: vw(32, 800);
+    border-radius: vw(50, 800);
   }
 
   @include hover {

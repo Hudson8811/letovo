@@ -24,7 +24,7 @@
     align-self: center;
 
     @include max(sm) {
-      padding-top: vw(130, 800);
+      padding-top: vw(162, 800);
     }
   }
 
@@ -82,7 +82,7 @@
     }
 
     @include max(sm) {
-      margin: 0 0 vw(43, 800);
+      margin: 0 0 vw(70, 800);
       font-size: vw(24, 800);
       line-height: vw(32, 800);
 

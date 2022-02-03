@@ -24,7 +24,7 @@
     justify-content: center;
 
     @include max(sm) {
-      padding-top: vw(130, 800);
+      padding-top: vw(242, 800);
     }
   }
 
@@ -46,9 +46,13 @@
     }
 
     @include max(sm) {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      width: vw(727, 800);
       max-width: none;
       margin: 0 auto vw(50, 800);
-      font-size: vw(32, 800);
+      font-size: vw(30, 800);
     }
   }
 
@@ -64,7 +68,7 @@
 
     @include max(sm) {
       width: 100%;
-      margin-bottom: vw(50, 800);
+      margin-bottom: vw(74, 800);
     }
   }
 
@@ -72,7 +76,7 @@
     align-self: center;
 
     @include max(sm) {
-      margin-bottom: vw(32, 800);
+      margin-bottom: vw(82, 800);
     }
   }
 }

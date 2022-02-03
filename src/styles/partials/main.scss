@@ -20,6 +20,6 @@ body {
 
   @include max(sm) {
     max-width: none;
-    padding: 0 vw(15, 800);
+    padding: 0 vw(50, 800);
   }
 }

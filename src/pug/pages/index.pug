@@ -24,7 +24,7 @@ block main
 					blockquote «Мы не ждем, что мир встанет с ног на голову, но с большой вероятностью в каждой сфере понимание профессионализма обновится. Как сформировать навык в химии, физике, биологии знают многие поколения учителей. Как сделать так, чтоб этот навык стал человеческим, переносимым из одной сферы в другую, а значит, имел право называться компетенцией — вот вызов, стоящий перед системой образования».
 					.director__main-bottom
 						.director__main-action
-							button.director__main-btn.btn(type="button") Перейти на сайт
+							a.director__main-btn.btn(href="https://letovo.ru/?utm_source=HSM&utm_medium=specproekt&utm_content=Button&utm_campaign=letovo_HSM_spec", target="_blank") Перейти на сайт
 						.director__main-social.social
 							each item in SOCIALS
 								a.social__item(class="social__item--" + item.id, href="#")
@@ -32,7 +32,7 @@ block main
 					
 					.director__main-notify
 						p.large 13 февраля — последний день приема заявок в «Летово».
-						p Чтобы узнать все особенности поступления — переходите по <a href="#">ссылке</a>.
+						p Чтобы узнать все особенности поступления — переходите по <a href="https://letovo.ru/?utm_source=HSM&utm_medium=specproekt&utm_content=Ssylka&utm_campaign=letovo_HSM_spec", target="_blank">ссылке</a>.
 
 		section.manual.section
 			.manual__container.container
@@ -49,7 +49,7 @@ block main
 				.choice__intro Выберите 3 ключевые характеристики вашего ребенка, поставив на первое место наиболее ярко выраженную
 				.choice__list.characteristics
 					each item in CHARACTERISTICS
-						button.characteristics__item(type="button", data-id= item.id, title= item.num)= item.text
+						button.characteristics__item(type="button", data-id= item.id)= item.text
 				button.choice__btn.btn(type="button") Получить результат
 
 		section.result.hide
@@ -63,7 +63,7 @@ block main
 
 						.result__main-bottom
 							.result__main-action
-								a.result__main-btn.btn(href="https://letovo.ru/", target="_blank") Подать заявку
+								a.result__main-btn.btn(href="https://letovo.ru/?utm_source=HSM&utm_medium=specproekt&utm_content=Zayavka&utm_campaign=letovo_HSM_spec", target="_blank") Подать заявку
 								button.result__main-btn.btn.__js_reset-result(type="button") Выбрать еще раз
 							.result__main-social.social
 								each item in SOCIALS
