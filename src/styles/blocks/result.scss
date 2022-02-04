@@ -392,6 +392,10 @@
         font-size: vw(24, 800);
         text-align: center;
       }
+
+	    > p + p{
+		    margin-top: 1em;
+	    }
     }
 
     &-bottom {
