@@ -112,5 +112,33 @@
         }
       }
     }
+
+	  &--in {
+		  svg {
+			  width: vw(29);
+
+			  @include min(1920) {
+				  width: 29px;
+			  }
+
+			  @include max(sm) {
+				  width: vw(29, 800);
+			  }
+		  }
+	  }
+
+	  &--yt {
+		  svg {
+			  width: vw(36);
+
+			  @include min(1920) {
+				  width: 36px;
+			  }
+
+			  @include max(sm) {
+				  width: vw(36, 800);
+			  }
+		  }
+	  }
   }
 }
