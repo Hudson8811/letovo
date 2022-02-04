@@ -93,13 +93,13 @@ window.addEventListener('load', () => {
 
   let selectedIds = [];
 
-  const shareTitle = 'Мой результат теста - Какой он, Ваш ребенок.';
+  /*const shareTitle = 'Мой результат теста - Какой он, Ваш ребенок.';
   const shareData = {
     vk: 'https://vk.com/share.php?url=<URL>',
     ok: 'https://connect.ok.ru/offer?url=<URL>&title=' + shareTitle,
     fb: 'https://www.facebook.com/sharer/sharer.php?u=<URL>',
     tw: 'https://twitter.com/intent/tweet?text=' + shareTitle + '&url=<URL>'
-  };
+  };*/
 
   const fpOptions = {
     licenseKey: '930B3D8E-64114A48-BE58EB40-E2698A87',
@@ -130,7 +130,7 @@ window.addEventListener('load', () => {
     return params.map((param) => param.split('=')[1]);
   };
 
-  const setShareLinks = (ids, hash) => {
+  /*const setShareLinks = (ids, hash) => {
     const socialItems = resultSection.querySelectorAll('.share-link');
     const url = getResultUrl(ids, hash);
 
@@ -138,7 +138,7 @@ window.addEventListener('load', () => {
       const modClass = it.className.split('social__item social__item--')[1];
       it.href = shareData[modClass].replace('<URL>', url);
     });
-  };
+  };*/
 
   const debounce = function(func, wait, immediate) {
     let timeout;
@@ -185,7 +185,7 @@ window.addEventListener('load', () => {
     const index = (setFromIndexes.size === indexes.length) ? indexes[0] : getDublicate(indexes);
     const resultItem = results[index - 1];
 
-    setShareLinks(selectedIds, resultItem.mod);
+    //setShareLinks(selectedIds, resultItem.mod);
 
     const image = new Image();
     image.src = `images/${resultItem.image.name}`;
