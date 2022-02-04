@@ -35,4 +35,19 @@
     outline: none;
     background-color: $blue-15;
   }
+
+	&--small{
+		font-weight: 400;
+		font-size: vw(27);
+		padding: vw(15) vw(25);
+		@include min(1920) {
+			padding: 15px 25px;
+			font-size: 27px;
+		}
+
+		@include max(sm) {
+			padding: vw(15, 800) vw(25, 800);
+			font-size: vw(27, 800);
+		}
+	}
 }

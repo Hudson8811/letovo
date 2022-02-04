@@ -21,8 +21,8 @@
   }
 
   &__item {
-    padding: 0 vw(8);
-    font-size: vw(64);
+    padding: vw(10) vw(25);
+    font-size: vw(57);
     line-height: 1;
     letter-spacing: 0.02em;
     color: $white;
@@ -36,13 +36,13 @@
     cursor: pointer;
 
     @include min(1920) {
-      padding: 0 8px;
-      font-size: 64px;
+      padding: 10px 25px;
+      font-size: 57px;
     }
 
     @include max(sm) {
-      padding: 0 vw(4, 800);
-      font-size: vw(48, 800);
+      padding: vw(13, 800) vw(5, 800);
+      font-size: vw(40, 800);
       align-self: center;
     }
 

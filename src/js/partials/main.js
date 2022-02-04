@@ -131,7 +131,7 @@ window.addEventListener('load', () => {
   };
 
   const setShareLinks = (ids, hash) => {
-    const socialItems = resultSection.querySelectorAll('.social__item');
+    const socialItems = resultSection.querySelectorAll('.share-link');
     const url = getResultUrl(ids, hash);
 
     socialItems.forEach(it => {
@@ -221,7 +221,7 @@ window.addEventListener('load', () => {
 
       setTimeout(() => {
 	      document.body.scrollTop = document.documentElement.scrollTop = 0;
-        showResultButton.textContent = 'Выбрать еще раз';
+        showResultButton.textContent = 'Вернуться к тесту';
       }, scrollingSpeed);
     }
   };

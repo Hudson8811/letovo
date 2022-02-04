@@ -65,6 +65,16 @@
 
     p {
       margin: 0;
+	    &:last-child{
+		    font-size: vw(26);
+		    font-weight: 700;
+		    @include min(1920) {
+			    font-size: 26px;
+		    }
+		    @include max(sm) {
+			    font-size: vw(26, 800);
+		    }
+	    }
     }
 
     p + p {

@@ -8,7 +8,7 @@ block vars
 
 block main
 	#fullpage
-		section.hero.section
+		section.hero.section(style="background-image: url(../images/kinds.svg), radial-gradient(50% 50% at 50% 50%, #ffffff 0%, rgba(255, 255, 255, 0) 100%);")
 			.hero__container.container
 				h1.hero__title Какой он, ваш ребенок?
 				.hero__text Узнайте, какие компетенции помогут школьнику стать востребованным специалистом
@@ -16,18 +16,18 @@ block main
 
 		section.director.section 
 			.director__container.container 
-				.director__intro Михаил Геннадьевич Мокринский, директор школы «Летово»:
+				.director__intro Михаил Мокринский, директор школы «Летово»:
 			
 				.director__image 
-					img(src="images/director.png", srcset="images/director@2x.png 2x", width="805", height="667", alt="Михаил Геннадьевич Мокринский")
+					img(src="images/director.png", srcset="images/director@2x.png 2x", width="805", height="667", alt="Михаил Мокринский")
 				.director__main
 					blockquote «Мы не ждем, что мир встанет с ног на голову, но с большой вероятностью в каждой сфере понимание профессионализма обновится. Как сформировать навык в химии, физике, биологии знают многие поколения учителей. Как сделать так, чтоб этот навык стал человеческим, переносимым из одной сферы в другую, а значит, имел право называться компетенцией — вот вызов, стоящий перед системой образования».
 					.director__main-bottom
 						.director__main-action
 							a.director__main-btn.btn(href="https://letovo.ru/?utm_source=HSM&utm_medium=specproekt&utm_content=Button&utm_campaign=letovo_HSM_spec", target="_blank") Перейти на сайт
 						.director__main-social.social
-							each item in SOCIALS
-								a.social__item(class="social__item--" + item.id, href="#")
+							each item in SOCIALS2
+								a.social__item(class="social__item--" + item.id, href= item.link)
 									+icon(item.id)(width= item.width, height= item.height)
 					
 					.director__main-notify
@@ -64,10 +64,10 @@ block main
 						.result__main-bottom
 							.result__main-action
 								a.result__main-btn.btn(href="https://letovo.ru/?utm_source=HSM&utm_medium=specproekt&utm_content=Zayavka&utm_campaign=letovo_HSM_spec", target="_blank") Подать заявку
-								button.result__main-btn.btn.__js_reset-result(type="button") Выбрать еще раз
+								button.result__main-btn.btn.btn--small.__js_reset-result(type="button") Вернуться к тесту
 							.result__main-social.social
 								each item in SOCIALS
-									a.social__item(class="social__item--" + item.id, href="#")
+									a.share-link.social__item(class="social__item--" + item.id, href="#")
 										+icon(item.id)(width= item.width, height= item.height)
 					
 		
