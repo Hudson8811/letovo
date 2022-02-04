@@ -91,12 +91,13 @@
     }
 
     @include max(sm) {
-      position: relative;
-      left: -27px;
-      width: vw(623, 800);
-      margin: 0 auto;
       padding-top: 0;
       order: 1;
+	    position: absolute;
+	    left: 0;
+	    bottom: 0;
+	    margin: 0;
+	    width: 50%;
     }
 
     img {
@@ -145,7 +146,7 @@
       left: 0;
       width: 100%;
       margin: 0;
-      padding-bottom: vw(43, 800);
+      padding-bottom: vw(70, 800);
     }
 
     blockquote {
@@ -239,11 +240,12 @@
       }
 
       @include max(sm) {
-        width: 100%;
         max-width: vw(610, 800);
-        margin: vw(50, 800) auto 0;
         font-size: vw(24, 800);
         text-align: center;
+
+	      width: 50%;
+	      margin: vw(70, 800) 0 0 auto;
       }
 
       p {
