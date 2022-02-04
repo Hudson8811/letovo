@@ -114,6 +114,10 @@ window.addEventListener('load', () => {
     fp.destroy('all');
     section.classList.add('active')
     fp = new fullpage('#fullpage', fpOptions);
+
+	  setTimeout(() => {
+		  document.body.scrollTop = document.documentElement.scrollTop = 0;
+	  }, scrollingSpeed);
   };
   
   const getResultUrl = (ids, hash) => {
@@ -213,7 +217,10 @@ window.addEventListener('load', () => {
       fp = new fullpage('#fullpage', fpOptions);
       fp.moveSectionDown();
 
+
+
       setTimeout(() => {
+	      document.body.scrollTop = document.documentElement.scrollTop = 0;
         showResultButton.textContent = 'Выбрать еще раз';
       }, scrollingSpeed);
     }
@@ -227,7 +234,6 @@ window.addEventListener('load', () => {
       resultTitle.textContent = '';
       resultText.textContent = '';
       resultImageWrapp.innerHTML = '';
-
       reinit(choiceSection);
     };
 
