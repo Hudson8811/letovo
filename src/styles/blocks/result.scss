@@ -438,21 +438,40 @@
       }
     }
 
+	  &-right{
+		  align-self: flex-start;
+		  margin-left: auto;
+		  margin-top: vw(-10);
+		  @include min(1920) {
+			  margin-top: -10px;
+		  }
+		  @include max(sm) {
+			  margin-top: vw(22, 800);
+			  margin-left: 0;
+			  align-self: center;
+		  }
+	  }
+
     &-social {
-      margin-top: vw(-10);
-      margin-left: auto;
-      align-self: flex-start;
-
-      @include min(1920) {
-        margin-top: -10px;
-      }
-
-      @include max(sm) {
-        margin-top: vw(22, 800);
-        margin-left: 0;
-        align-self: center;
-      }
     }
+	  &-info{
+		  font-size: vw(20);
+		  line-height: 1.5;
+		  color: $blue-0a;
+		  letter-spacing: 0.02em;
+		  margin-top: vw(15);
+
+		  @include min(1920) {
+			  font-size: 20px;
+			  margin-top: 15px;
+		  }
+
+		  @include max(sm) {
+			  font-size: vw(20, 800);
+			  margin-top: vw(15, 800);
+			  text-align: center;
+		  }
+	  }
   }
 
   &__title {

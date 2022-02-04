@@ -65,9 +65,11 @@ block main
 							.result__main-action
 								a.result__main-btn.btn(href="https://letovo.ru/?utm_source=HSM&utm_medium=specproekt&utm_content=Zayavka&utm_campaign=letovo_HSM_spec", target="_blank") Подать заявку
 								button.result__main-btn.btn.btn--small.__js_reset-result(type="button") Вернуться к тесту
-							.result__main-social.social
-								each item in SOCIALS
-									a.share-link.social__item(class="social__item--" + item.id, href="#")
-										+icon(item.id)(width= item.width, height= item.height)
+							.result__main-right
+								.result__main-social.social
+									each item in SOCIALS
+										a.share-link.social__item(class="social__item--" + item.id, href="#")
+											+icon(item.id)(width= item.width, height= item.height)
+								.result__main-info Поделиться в социальных сетях
 					
 		
